@@ -1,7 +1,7 @@
 # Описание сущностей
 (имя поля, тип, ограничения, связь с другими сущностями)
 
-## Аккаунт (Account)
+## Пользователь (User)
 |Имя поля|Тип|Ограничения|Описание|
 |:-----:|:--:|:---------:|:------:|
 |email|VARCHAR(100)|PK, NOT NULL, UNIQUE|Первичный ключ|
@@ -21,13 +21,6 @@
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |user_id|INT|NOT NULL|ID пользователя|
 |message|VARCHAR(1000)|NOT NULL|Содержимое сообщения|
-
-## Администратор (Admin)
-|Имя поля|Тип|Ограничения|Описание|
-|:-----:|:--:|:---------:|:------:|
-|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
-|nickname|VARCHAR(30)|NOT NULL|Ник админа|
-|password|VARCHAR(30)|NOT NULL|Пароль аккаунта|
 
 ## Контакты (Contacts)
 |Имя поля|Тип|Ограничения|Описание|
@@ -52,17 +45,24 @@
 |color|VARCHAR(100)|NOT NULL|Цвет клиента|
 
 
-## Архив диалогов (Sertification)
+## Архив диалогов (Dialog archive)
 |Имя поля|Тип|Ограничения|Описание|
 |:------:|:-:|:---------:|:------:|
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |dialog_id|INT|FK, NOT NULL|Номер диалога|
 
-## Избранные сообщения (Sertification Category)
+## Избранные сообщения (Favourite messages)
 |Имя поля|Тип|Ограничения|Описание|
 |:------:|:-:|:---------:|:------:|
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |message_id|VARCHAR(100)|NOT NULL|Сообщение|
+
+## Беседы (Conversations)
+|Имя поля|Тип|Ограничения|Описание|
+|:------:|:-:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|user_id|INT|NOT NULL|ID пользователей|
+|messages|INT|FK|Сообщения в беседе|
 
 ## Роли (Roles)
 |имя поля | тип | ограничения | описание |
