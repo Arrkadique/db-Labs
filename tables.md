@@ -1,0 +1,80 @@
+# Описание сущностей
+(имя поля, тип, ограничения, связь с другими сущностями)
+
+## Аккаунт (Account)
+|Имя поля|Тип|Ограничения|Описание|
+|:-----:|:--:|:---------:|:------:|
+|email|VARCHAR(100)|PK, NOT NULL, UNIQUE|Первичный ключ|
+|nickname|VARCHAR(30)|NOT NULL|Никнейм аккаунта|
+|password|VARCHAR(30)|NOT NULL|Пароль аккаунта|
+|balance|INT|NOT NULL|Баланс аккаунта|
+
+## Диалоги (Dialogs)
+|Имя поля|Тип|Ограничения|Описание|
+|:-----:|:--:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|messages|INT|FK|Сообщения в диалоге|
+
+## Сообщения (Messages)
+|Имя поля|Тип|Ограничения|Описание|
+|:-----:|:--:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|user_id|INT|NOT NULL|ID пользователя|
+|message|VARCHAR(1000)|NOT NULL|Содержимое сообщения|
+
+## Администратор (Admin)
+|Имя поля|Тип|Ограничения|Описание|
+|:-----:|:--:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|nickname|VARCHAR(30)|NOT NULL|Ник админа|
+|password|VARCHAR(30)|NOT NULL|Пароль аккаунта|
+
+## Контакты (Contacts)
+|Имя поля|Тип|Ограничения|Описание|
+|:------:|:-:|:---------:|:------:|
+|id|PK|AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|title|VARCHAR(100)|NOT NULL|Название альбома|
+|date_of_writing|DATE|NOT NULL|Дата записи альбома|
+|sertification|INT|FK, NULL|внешний ключ на Сертификацию|
+|song|INT|FK, NOT NULL|Внешний ключ на Песню из Альбома|
+|genre|INT|FK, NOT NULL|Внешний ключ на Жанр альбома|
+
+## Баланс (Balance)
+|Имя поля|Тип|Ограничения|Описание|
+|:------:|:-:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|balance|INT|FK, NOT NULL|Баланс пользователя|
+
+## Настройки клиента (User settings)
+|Имя поля|Тип|Ограничения|Описание|
+|:------:|:-:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|color|VARCHAR(100)|NOT NULL|Цвет клиента|
+
+
+## Архив диалогов (Sertification)
+|Имя поля|Тип|Ограничения|Описание|
+|:------:|:-:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|dialog_id|INT|FK, NOT NULL|Номер диалога|
+
+## Избранные сообщения (Sertification Category)
+|Имя поля|Тип|Ограничения|Описание|
+|:------:|:-:|:---------:|:------:|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|message_id|VARCHAR(100)|NOT NULL|Сообщение|
+
+## Роли (Roles)
+|имя поля | тип | ограничения | описание |
+|:---:|:---:|:---:|:---:|
+| id | INT | PK, AUTO INCREMENT, NOT NULL, UNIQUE | первичный ключ |
+| name | VARCHAR(50) | NOT NULL | название роли |
+| permission | VARCHAR(128) | NOT NULL | право пользователя |
+
+## Логи (Logs)
+|имя поля | тип | ограничения | описание |
+|:---:|:---:|:---:|:---:|
+| id | INT | PK, AUTO INCREMENT, NOT NULL, UNIQUE | первичный ключ |
+| user | VARCHAR(100) | FK, NOT NULL | внешний ключ на Аккаунт |
+| type | VARCHAR(50) | NOT NULL | тип лога(CREATE/UPDATE/DELETE) |
+
