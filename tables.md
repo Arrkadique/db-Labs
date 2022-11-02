@@ -26,11 +26,7 @@
 |Имя поля|Тип|Ограничения|Описание|
 |:------:|:-:|:---------:|:------:|
 |id|PK|AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
-|title|VARCHAR(100)|NOT NULL|Название альбома|
-|date_of_writing|DATE|NOT NULL|Дата записи альбома|
-|sertification|INT|FK, NULL|внешний ключ на Сертификацию|
-|song|INT|FK, NOT NULL|Внешний ключ на Песню из Альбома|
-|genre|INT|FK, NOT NULL|Внешний ключ на Жанр альбома|
+|user_id|INT|NOT NULL|ID пользователя|
 
 ## Баланс (Balance)
 |Имя поля|Тип|Ограничения|Описание|
@@ -44,14 +40,13 @@
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |color|VARCHAR(100)|NOT NULL|Цвет клиента|
 
-
 ## Архив диалогов (Dialog archive)
 |Имя поля|Тип|Ограничения|Описание|
 |:------:|:-:|:---------:|:------:|
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |dialog_id|INT|FK, NOT NULL|Номер диалога|
 
-## Избранные сообщения (Favourite messages)
+## Избранные сообщения (Favorite messages)
 |Имя поля|Тип|Ограничения|Описание|
 |:------:|:-:|:---------:|:------:|
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
