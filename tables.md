@@ -25,7 +25,7 @@
 ## Контакты (Contacts)
 |Имя поля|Тип|Ограничения|Описание|
 |:------:|:-:|:---------:|:------:|
-|id|PK|AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
+|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |user_id|INT|NOT NULL|ID пользователя|
 
 ## Баланс (Balance)
@@ -51,13 +51,6 @@
 |:------:|:-:|:---------:|:------:|
 |id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
 |message_id|VARCHAR(100)|NOT NULL|Сообщение|
-
-## Беседы (Conversations)
-|Имя поля|Тип|Ограничения|Описание|
-|:------:|:-:|:---------:|:------:|
-|id|INT|PK, AUTO INCREMENT, NOT NULL, UNIQUE|Первичный ключ|
-|user_id|INT|NOT NULL|ID пользователей|
-|messages|INT|FK|Сообщения в беседе|
 
 ## Роли (Roles)
 |имя поля | тип | ограничения | описание |
